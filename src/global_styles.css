@@ -1,0 +1,97 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', 'Comic Sans MS', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #334155;
+  background: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 3px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+button:focus {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Ensure images are accessible */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  * {
+    text-shadow: none !important;
+  }
+  
+  .gallery-main-title {
+    color: #000000 !important;
+    text-shadow: 2px 2px 0px #ffffff !important;
+  }
+  
+  .gallery-subtitle {
+    color: #000000 !important;
+    text-shadow: 1px 1px 0px #ffffff !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ensure proper color contrast for accessibility */
+.gallery-item {
+  color: #1e293b;
+}
+
+.gallery-title {
+  color: #0f172a;
+}
+
+/* Loading states */
+img {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+img[src] {
+  animation: none;
+  background: none;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

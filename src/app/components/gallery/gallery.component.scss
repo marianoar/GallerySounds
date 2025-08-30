@@ -85,8 +85,11 @@
   }
   
   .gallery-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column; // Stack items vertically
     gap: 1.5rem;
+    overflow-x: unset; // Remove horizontal scroll
+    max-width: 100%;
+align-items: center;
   }
 }
 

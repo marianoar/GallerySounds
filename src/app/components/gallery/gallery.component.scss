@@ -1,7 +1,7 @@
 .gallery-section {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ff6b9d 100%);
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   position: relative;
   
   &::before {
@@ -64,10 +64,11 @@
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-direction: row;
   gap: 2rem;
-  max-width: 1400px;
+  max-width: 100%;
+  overflow-x: auto;
   margin: 0 auto;
   position: relative;
   z-index: 1;
